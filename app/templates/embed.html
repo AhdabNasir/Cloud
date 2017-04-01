@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Ahdab Nasir</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <!-- Compiled and minified CSS -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    {{ js_resources|indent(4)|safe }}
+
+    {{ css_resources|indent(4)|safe }}
+
+    {{ plot_script|indent(4)|safe }}
+
+  </head>
+  <body>
+
+
+ <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="" class="brand-logo">Ahdab Nasir</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="emotion">Emotions</a></li>
+        <li><a href="visualization">Visualization</a></li>
+        <li><a href="database/collections">Database</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="emotion">Emotions</a></li>
+        <li><a href="visualization">Visualization</a></li>
+        <li><a href="database/collections">Database</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">{% block title %}{% endblock %}</h1>
+      <div class="row center">
+
+    <!-- A simple form for changing the graph -->
+    <p> Select your settings: </p>
+    <form name="color_button" method='GET'>
+        Color:
+        <select name="color">
+            <option {{ "selected" if color|indent(4)|safe == "Red" }} value="Red">Red</option>
+            <option {{ "selected" if color|indent(4)|safe == "Green" }} value="Green">Green</option>
+            <option {{ "selected" if color|indent(4)|safe == "Blue" }} value="Blue">Blue</option>
+            <option {{ "selected" if color|indent(4)|safe == "Black" }} value="Black">Black</option>
+        </select>
+        <br>
+        From:
+        <input type="text" name="_from" value="{{ _from }}">
+        <br>
+        To:
+        <input type="text" name="to" value="{{ to }}">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {{ plot_div|indent(4)|safe }}
+    <p> Demonstrates some very simple embedding into a webpage</p>
+
+   </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About me</h5>
+          <p class="grey-text text-lighten-4">I am Ahdab Nasir, a MSc Computer Science student</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">GibHub</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/AhdabNasir/Cloud">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Contact</h5>
+          <ul>
+            <li><a class="white-text" href="mailto:ec16016@qmul.ac.uk">ec16016@qmul.ac.uk</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  </body>
+</html>

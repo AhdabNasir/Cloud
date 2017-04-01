@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}<img src="{{ url_for('static', filename = 'img/'+mood+'_face.jpeg')}}", width=80, height=60, quality=95 />
+{% endblock %}
+{% block content %}
+<p>A Restful API service to detect sentiment (positive/negative etc) based on emotion expressed into texts. As a result, the APi measures the texts and displays the image emotion which matches it. </p>
+<form action="" method="POST">
+ 	{{ form.csrf_token }}
+ 	{{ form.message.label }} 
+ 	{{ form.message(size=200) }}
+    <input type=submit value="Send">
+</form>
+{% endblock %}
